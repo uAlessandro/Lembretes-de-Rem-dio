@@ -17,7 +17,8 @@ body{
     
 }
 main{
-    width: 70vw;
+    width: 90%;
+    max-width: 700px;
     background-color: rgba(255, 255, 255, 0.911);
     margin: auto;
     position: relative;
