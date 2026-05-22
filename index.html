@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-bR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="imagem/despertar.png" type="image/x-icon">
+
+<title>Lembrete de Remédios</title>
+<link rel="stylesheet" href="style.css">
+
+
+
+</head>
+
+<body>
+    
+    <main>
+        <img src="imagem/despertar.png" alt="">
+<div id="cadastro">
+    
+    <h1>Lembrete de Medicamentos</h1>
+    
+    <input type="text" id="remedio" placeholder="Nome do remédio" >
+    
+    <input type="time" id="horario">
+    
+    
+    <button onclick="cadastrarRemedio()">
+    Cadastrar
+</div>
+    </button>
+    
+    <div id="lista"></div>
+    
+    <script>
+    
+    let lembretes = [];
+    
+    function cadastrarRemedio(){
+    
+        let remedio =
+        document.getElementById("remedio").value;
+    
+        let horario =
+        document.getElementById("horario").value;
+    
+        if(remedio && horario){
+    
+            lembretes.push({
+                nome: remedio,
+                horario: horario
+            });
+    
+            let card = document.createElement("div");
+    
+            card.className = "card";
+    
+            card.innerHTML =
+            "<strong><mark>Remédio:</mark></strong> " + remedio +
+            "<br><strong><mark>Horário:</mark></strong> " + horario;
+    
+            document.getElementById("lista")
+            .appendChild(card);
+    
+            alert("Lembrete cadastrado!");
+    
+            document.getElementById("remedio").value = "";
+            document.getElementById("horario").value = "";
+        }
+    }
+    
+    setInterval(() => {
+    
+        let agora = new Date();
+    
+        let horaAtual =
+        agora.getHours().toString().padStart(2,'0')
+        + ":" +
+        agora.getMinutes().toString().padStart(2,'0');
+    
+        lembretes.forEach(remedio => {
+    
+            if(remedio.horario === horaAtual){
+    
+                alert("Hora de tomar: " + remedio.nome);
+    
+            }
+    
+        });
+    
+            }, 1000);
+    
+    </script>
+     <footer>
+    <p>Site criado por <strong>Alessandro Pereira</strong></p>
+    </footer>
+    </main>
+  
+</body>
+    
+  
+  
+ 
+   
+   
+</html>
