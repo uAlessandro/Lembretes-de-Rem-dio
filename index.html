@@ -22,7 +22,7 @@
     
     <input type="text" id="remedio" placeholder="Nome do remédio" >
     
-    <input type="time" id="horario">
+    <input type="time" id="horario" placeholder="Horário">
   
     <br>
     <button onclick="cadastrarRemedio()">
@@ -69,27 +69,7 @@
         }
     }
     
-    setInterval(() => {
-    
-        let agora = new Date();
-    
-        let horaAtual =
-        agora.getHours().toString().padStart(2,'0')
-        + ":" +
-        agora.getMinutes().toString().padStart(2,'0');
-    
-        lembretes.forEach(remedio => {
-    
-            if(remedio.horario === horaAtual){
-    
-                alert("Hora de tomar: " + remedio.nome);
-    
-            }
-    
-        });
-    
-            }, 1000);
-    
+   
     </script>
      <footer>
     <p>Site criado por <strong>Alessandro Pereira</strong></p>

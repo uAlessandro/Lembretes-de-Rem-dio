@@ -6,7 +6,7 @@
 
 body{
     font-family: Arial, sans-serif;
-    background-color: #969a9b33;
+    background-color: #969a9ba2;
     text-align: center;
     background-image: url(imagem/fundo-pilulas.webp);
     background-clip: content-box;
@@ -31,7 +31,7 @@ main{
    
 }
 h1{
-    color: #0077b6;
+    color: #ce3b3b;
   
    
     text-shadow: 2px 1px rgb(221, 217, 217);
